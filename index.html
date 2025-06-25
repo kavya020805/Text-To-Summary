@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Summarizer</title>
+	<meta name="description" content="Summarize your text effortlessly with the Summarizer.">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="centered-wrapper">
+		<div class="glass-bg"></div>
+		<div class="flex-column container glass-card">
+			<header class="header-center">
+				<h1 class="header-title">
+					<span class="header-title-line-1">The</span>
+					<span class="header-title-line-2">Summarizer</span>
+				</h1>
+			</header>
+			<main>
+				<section class="flex-column text-input-area-section">
+					<textarea id="text-input-area" placeholder="Paste text here" aria-label="Paste text here to summarize"></textarea>
+					<div class="flex-column controls">
+						<div id="summary-length-container" class="flex-column summary-length-container">
+							<div class="summary-length-group">
+								<label class="summary-length-option">
+									<input type="radio" name="summary-length" value="short" checked>
+									<span>Short <span class="emoji">🎈</span> (max 20 words)</span>
+								</label>
+								<label class="summary-length-option">
+									<input type="radio" name="summary-length" value="medium">
+									<span>Medium <span class="emoji">🎉</span> (max 60 words)</span>
+								</label>
+								<label class="summary-length-option">
+									<input type="radio" name="summary-length" value="long">
+									<span>Long <span class="emoji">🦄</span> (max 100 words)</span>
+								</label>
+							</div>
+						</div>
+						<button id="summarize-button" class="button summarize-button"><span class="emoji">✨</span> Summarize</button>
+					</div>
+				</section>
+				<section id="summary-output-section" class="flex-column summary-output-section">
+					<div id="summary-content" class="flex-column summary-content">
+						<textarea id="summary-output-area" placeholder="See summary here" aria-label="Summary of text" disabled></textarea>
+						<div class="flex-row controls">
+							<button id="copy-button" class="button button-full-width" disabled><span class="emoji">📋</span> Copy</button>
+							<button id="clear-button" class="button button-full-width" disabled><span class="emoji">🧹</span> Clear</button>
+						</div>
+					</div>
+					<div id="loading-section" class="flex-column loading-section" aria-live="polite">
+						<img src="images/loading-spinner.svg" alt="Loading spinner">
+						<div id="loading-message" class="loading-message">Summarizing...</div>
+					</div>
+					<div id="error-section" class="flex-column error-section" aria-live="assertive">
+						<div id="error-message" class="error-message"></div>
+						<button id="dismiss-error-button" class="button button-full-width">Dismiss Error</button>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+
+	<script type="module" src="index.js"></script>
+</body>
+
+</html>

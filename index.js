@@ -1,6 +1,6 @@
 // Constants
 const GEMINI_API_KEY = 'AIzaSyB3V07QTCB8jc79y92xtl6c8oORJXe02UM';
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + GEMINI_API_KEY;
+const GEMINI_API_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta';
 const feedbackDisplayTime = 8000;
 
 // Element Selectors
@@ -27,21 +27,46 @@ dismissErrorButton.addEventListener('click', dismissError);
 document.addEventListener('DOMContentLoaded', focusOnTextInputArea);
 textInputArea.addEventListener('input', scrollTextAreaToTopAndEnableControls);
 
+// Helper: List available models
+async function listModels() {
+    const response = await fetch(`${GEMINI_API_BASE_URL}/models?key=${GEMINI_API_KEY}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.error?.message || 'Failed to list models');
+    }
+    return data.models;
+}
+
 // GEMINI Summarizer Function
 async function summarizeWithGemini(text, length = 'medium') {
-    const prompt = `Summarize the following text in ${length} length:
-${text}`;
+    // List models and pick one that supports generateText
+    const models = await listModels();
+    // Prefer a model containing "gemini" in its name; fallback to text-bison-001
+    const model = models.find(m => m.name.includes('gemini')) || models.find(m => m.name.includes('text-bison')) || null;
+    if (!model) throw new Error('No suitable model found');
+
+    const modelName = model.name; // e.g., "models/text-bison-001"
+
+    const prompt = `Summarize the following text in ${length} length:\n${text}`;
 
     const body = {
-        contents: [{ parts: [{ text: prompt }] }]
+        prompt: {
+            text: prompt,
+        },
+        // You can add maxOutputTokens or other params here if needed
     };
 
-    const response = await fetch(GEMINI_API_URL, {
+    const response = await fetch(`${GEMINI_API_BASE_URL}/${modelName}:generateText?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
     });
 
     const data = await response.json();
@@ -50,7 +75,7 @@ ${text}`;
         throw new Error(data.error?.message || 'Failed to fetch summary from Gemini');
     }
 
-    return data.candidates[0].content.parts[0].text;
+    return data.candidates[0].output;
 }
 
 // Summarize Handler
@@ -102,7 +127,9 @@ function dismissError() {
     clear();
 }
 
-// Helpers
+// Helpers and UI management functions remain unchanged
+// ... (rest of your helper functions here)
+
 function focusOnTextInputArea() {
     textInputArea.focus();
 }

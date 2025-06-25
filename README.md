@@ -6,13 +6,13 @@ A sleek, responsive web app that summarizes large texts efficiently using Google
 
 ## Features
 
-- Multi-length summary options: Short (20 words), Medium (60 words), Long (100 words)
-- Clean, modern UI with responsive design
-- Client-side validation and error feedback
-- Copy and Clear buttons with instant feedback
-- Loading and error indicators
-- Powered by Google Gemini API for quality summaries
-- Accessibility with aria-labels and keyboard support
+- Multi-length summary options: Short (20 words), Medium (60 words), Long (100 words)  
+- Clean, modern UI with responsive design  
+- Client-side validation and error feedback  
+- Copy and Clear buttons with instant feedback  
+- Loading and error indicators  
+- Powered by Google Gemini API for quality summaries  
+- Accessibility with aria-labels and keyboard support  
 
 ---
 
@@ -26,5 +26,9 @@ Boosts productivity by extracting key points quickly with an accessible, easy-to
 
 ![App Screenshot](https://github.com/user-attachments/assets/d226416f-be37-4141-a712-28bb8ac62308)
 
-
 ---
+
+## Live Demo
+
+Check out the live version deployed on GitHub Pages:  
+[https://your-username.github.io/your-repo](https://your-username.github.io/your-repo)

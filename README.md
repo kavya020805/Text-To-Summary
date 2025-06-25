@@ -31,4 +31,4 @@ Boosts productivity by extracting key points quickly with an accessible, easy-to
 ## Live Demo
 
 Check out the live version deployed on GitHub Pages:  
-[https://your-username.github.io/your-repo](https://kavya020805.github.io/Text-To-Summary/)
+[https://kavya020805.github.io/Text-To-Summary/](https://kavya020805.github.io/Text-To-Summary/)

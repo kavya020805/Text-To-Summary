@@ -24,7 +24,7 @@ Boosts productivity by extracting key points quickly with an accessible, easy-to
 
 ## Screenshot
 
-![App Screenshot](https://github.com/user-attachments/assets/d226416f-be37-4141-a712-28bb8ac62308)
+![App Screenshot](https://kavya020805.github.io/Text-To-Summary/)
 
 ---
 

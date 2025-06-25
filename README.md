@@ -27,8 +27,3 @@ Boosts productivity by extracting key points quickly with an accessible, easy-to
 ![App Screenshot](https://github.com/user-attachments/assets/d226416f-be37-4141-a712-28bb8ac62308)
 
 ---
-
-## Live Demo
-
-Check out the live version deployed on GitHub Pages:  
-[https://kavya020805.github.io/Text-To-Summary/](https://kavya020805.github.io/Text-To-Summary/)

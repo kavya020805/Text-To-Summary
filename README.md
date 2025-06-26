@@ -24,6 +24,6 @@ Boosts productivity by extracting key points quickly with an accessible, easy-to
 
 ## Screenshot
 
-![App Screenshot](![image](https://github.com/user-attachments/assets/225f6464-8288-4f60-a0fd-cec84ad33b6e)
+![image](https://github.com/user-attachments/assets/225f6464-8288-4f60-a0fd-cec84ad33b6e)
 
 ---

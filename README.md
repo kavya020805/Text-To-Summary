@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4a95aee4-3e22-47a5-aa4e-3e0ed2b3af66)![image](https://github.com/user-attachments/assets/4a95aee4-3e22-47a5-aa4e-3e0ed2b3af66)# The Summarizer
+# The Summarizer
 
 A sleek, responsive web app that summarizes large texts efficiently using Google’s Gemini API. Built with pure HTML, CSS, and JavaScript, it focuses on productivity, accessibility, and smooth UX.
 
